@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafiz Suleman Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background: #fff;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    opacity: 0.9;
+}
+
+section .content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+section .image {
+    flex: 1;
+    text-align: center;
+    height: 1vh;
+}
+
+section .image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+section .image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    section .content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+</style>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hafiz Suleman Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <section id="home">
+            <div class="content">
+                <h1>Welcome to my portfolio</h1>
+                <p>I am Hafiz Suleman. Tell me how can I assist you.</p>
+            </div>
+            <div class="image">
+                <img src="/mypic.jpg" alt="Home Image">
+            </div>
+        </section>
+    
+        <section id="about">
+            <div class="content">
+                <h2>About Me</h2>
+                <p>Name: Hafiz Suleman</p>
+                <p>City: Kharian</p>
+                <p>University: Askari Institute of Higher Education</p>
+                <p>Degree: BScs</p>
+                <p>Experience: <ul>
+                    <li>Amazon Virtual Assistant</li>
+                    <li>Full Stack Developer</li>
+                    <li>Programmer (C++, Java, PHP)</li>
+                </ul></p>
+            </div>
+            <div class="image">
+                <img src="about.jpg" alt="About Image">
+            </div>
+        </section>
+    
+        <section id="services">
+            <div class="content">
+                <h2>My Services</h2>
+                <ul>
+                    <li>Amazon Virtual Assistant</li>
+                    <li>Full Stack Developer</li>
+                    <li>Programmer (C++, Java, PHP)</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="services.jpg" alt="Services Image">
+            </div>
+        </section>
+    
+        <section id="contact">
+            <div class="content">
+                <h2>Contact Me</h2>
+                <p>WhatsApp: 03217249056</p>
+                <p>Instagram: <a href="https://www.instagram.com/your_instagram_id">your_instagram_id</a></p>
+            </div>
+            <div class="image">
+                <img src="contact.jpg" alt="Contact Image">
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 Hafiz Suleman</p>
+        </footer>
+    
+        <script src="scripts.js">
+            document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>
